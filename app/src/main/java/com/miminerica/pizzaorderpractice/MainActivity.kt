@@ -2,6 +2,7 @@ package com.miminerica.pizzaorderpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.miminerica.pizzaorderpractice.adapters.MyViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -17,7 +18,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
-//        myTabLayout.setupWithViewPager()
+
+        val viewPageAdapter = MyViewPagerAdapter(supportFragmentManager)
+        myViewPager.adapter = viewPageAdapter
+        myTabLayout.setupWithViewPager(myViewPager)
 
     }
 
